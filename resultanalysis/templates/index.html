@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%}Title{% endblock %}</title>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" type="text/css" >
+<!--<link href='https://fonts.googleapis.com/css?family=Satisfy' rel="stylesheet" type="text/css">
+<link rel="stylesheet" href= " https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min/ls"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+-->
+</head>
+<body>
+
+ <nav class="navbar navbar-inverse">
+     #logo
+     <div class="container-fluid">
+         <div class="navbar-header">
+             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topnavbar">
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+             </button>
+             <a class="navbar-brand" href="#"> JECRC </a>
+         </div>
+         #items
+         <div class="collapse navbar-collapse">
+             <ul class="nav navbar-nav">
+                 <li class="active">
+                    <a href="/">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;
+                        TEXT
+                    </a>
+                 </li>
+                  <li class="">
+                    <a href="{% url 'detail'%}">
+                        <span class="glyphicon glyphicon-cd" aria-hidden="true"></span>&nbsp;
+                        TEXT_2
+                    </a>
+                 </li>
+             </ul>
+         </div>
+     </div>
+ </nav>
+{%block content%}
+ {% if all_students%}
+    <h3> STUDENT INFO: </h3>
+    <ul>
+        {% for student in all_student %}
+        <li><a href="{{all_student}}" >{{ all_student }} ></a></li>
+        {% endfor %}
+    </ul>
+ {% else %}
+    <h3> NO information is available </h3>
+ {% endif %}
+{%endblock%}
+</body>
+</html>

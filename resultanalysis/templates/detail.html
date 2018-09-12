@@ -1,0 +1,12 @@
+{%entends "index.html"%}
+{%block title%} text {%endblock%}
+{%block content%}
+<img src ="#">
+<h1>{{students}}</h1>
+<h3>{{}}</h3>
+<ul>
+    {% for student in allstudents %}
+        <li>{{#}} - {{#}}</li>
+    {% endfor }
+</ul>
+{%endblock%}
